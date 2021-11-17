@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>タブ</title>
+  <link type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script>
+    $(function () {
+      $("#tabs").tabs({
+        ajaxOptions: {
+          error: function (xhr, status, index, anchor) {
+            $(anchor.hash).html("Something wrong happens.");
+          }
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div id="tabs">
+    <ul>
+      <li><a href="#tab1">ひとつめ</a></li>
+      <li><a href="#tab2">ふたつめ</a></li>
+      <li><a href="#tab3">みっつめ</a></li>
+    </ul>
+    <div id="tab1">
+      <pre>雨ニモマケズ</pre>
+      <pre>風ニモマケズ</pre>
+      <pre>雪ニモ夏ノ暑サニモマケヌ</pre>
+      <pre>丈夫ナカラダヲモチ</pre>
+      <pre>慾ハナク</pre>
+      <pre>決シテ瞋ラズ</pre>
+      <pre>イツモシヅカニワラッテヰル</pre>
+      <pre>一日ニ玄米四合ト</pre>
+      <pre>味噌ト少シノ野菜ヲタベ</pre>
+      <pre>アラユルコトヲ</pre>
+      <pre>ジブンヲカンジョウニ入レズニ</pre>
+      <pre>ヨクミキキシワカリ</pre>
+      <pre>ソシテワスレズ</pre>
+    </div>
+    <div id="tab2">
+      <pre>野原ノ松ノ林ノ蔭</pre>
+      <pre>小サナ萓ブキノ小屋ニヰテ</pre>
+      <pre>東ニ病気ノコドモアレバ</pre>
+      <pre>行ッテ看病シテヤリ</pre>
+      <pre>西ニツカレタ母アレバ</pre>
+      <pre>行ッテソノ稲ノ朿ヲ［＃「朿ヲ」はママ］負ヒ</pre>
+      <pre>南ニ死ニサウナ人アレバ</pre>
+      <pre>行ッテコハガラナクテモイヽトイヒ</pre>
+      <pre>北ニケンクヮヤソショウガアレバ</pre>
+      <pre>ツマラナイカラヤメロトイヒ</pre>
+    </div>
+    <div id="tab3">
+      <pre>ヒドリノトキハナミダヲナガシ</pre>
+      <pre>サムサノナツハオロオロアルキ</pre>
+      <pre>ミンナニデクノボートヨバレ</pre>
+      <pre>ホメラレモセズ</pre>
+      <pre>クニモサレズ</pre>
+      <pre>サウイフモノニ</pre>
+      <pre>ワタシハナリタイ</pre>
+    </div>
+  </div>
+</body>
+
+</html>

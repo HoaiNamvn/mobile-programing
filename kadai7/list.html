@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>メニュー</title>
+    <link type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <style>
+      .ui-menu { width: 200px }
+    </style>
+    <script>
+      $(function(){
+        $("#menu").menu({
+          select: function(event,ui){
+            console.log(ui.item.text());
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <ul id="menu">
+      <li><div>新規作成</div></li>
+      <!-- li 無効にする　 -->
+      <li class="ui-state-disabled"><div>開く</div></li>
+      <li><div>保存</div>
+        <ul>
+          <li><div>上書き保存</div></li>
+          <li><div>名前を付けて保存</div></li>
+        </ul>
+      </li>
+      <li><div>終了</div>
+        <ul>
+          <li><div>通常終了</div></li>
+          <li><div>シャットダウン</div></li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>

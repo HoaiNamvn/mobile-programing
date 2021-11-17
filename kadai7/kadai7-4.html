@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>スライダー</title>
+    <link type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+      $(function(){
+        $("#slider").slider({
+          min: 0, max: 255,
+          step: 1, value: 0,
+          slide: function(event,ui){
+            console.log(ui.value);
+            $("#color").css("background", "rgb("+ui.value+","+ui.value+","+ui.value+")");
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="slider"></div>
+    <div id="color" style="width:300px; height: 100px; border:1px solid black;
+                           background:black;margin:10px"></div>
+  </body>
+</html>

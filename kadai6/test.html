@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>ドラッグアンドドロップ</title>
+    <link type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <style>
+      .drag { width:100px; height:100px; padding:0.5em; margin:1em; float:left }
+      #drop { width:150px; height:150px; padding:0.5em; margin:1em; float:left }
+    </style>
+    <script>
+      $(function(){
+        $(".drag").draggable();
+        $("#pochi").draggable().resizable();
+        $("#tama").draggable().resizable();
+
+        $("#drop").droppable({
+          drop: function(event, ui){
+            $(this)
+              .addClass("ui-state-highlight")
+              .html(ui.draggable.text()+"をドロップしました");
+          },
+          out: function(event, ui){
+            $(this)
+              .removeClass("ui-state-highlight")
+              .html("さようなら"+ui.draggable.text());
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="pochi" class="ui-widget-content drag" style="background:pink">
+      ポチ(ワンワン)
+    </div>
+    <div id="tama" class="ui-widget-content drag" style="background:yellow">
+      タマ(ニャーン)
+    </div>
+    <div id="taro" class="ui-widget-content drag" style="background:rgb(130, 121, 167)">
+      タロウ(キーキー)
+    </div>
+    <div id="drop" class="ui-widget-header">
+      ここにドラッグしてね
+    </div>
+  </body>
+</html>

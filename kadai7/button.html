@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>ボタンを設ける</title>
+    <link type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <style>div {padding: 5px}</style>
+    <script>
+      $(function(){
+        $('#btn').button();
+        $('#toggle').button();
+        $('[type="checkbox"]').checkboxradio();
+        $('[type="radio"]').checkboxradio();
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <button id="btn">単一のボタン</button>
+      <input id="toggle" type="checkbox" />
+      <label for="toggle">トグルボタン</label>
+    </div>
+    <!-- frame set -->
+    <fieldset>
+      <legend>チェックして</legend>
+      <input id="c1" type="checkbox" /><label for="c1">チ</label>
+      <input id="c2" type="checkbox" /><label for="c2">エ</label>
+      <input id="c3" type="checkbox" /><label for="c3">ツ</label>
+      <input id="c4" type="checkbox" /><label for="c4">ク</label>
+    </fieldset>
+    <fieldset>
+      <legend>ひとつえらんで</legend>
+      <input id="r1" type="radio" name="radio" /><label for="r1">ラ</label>
+      <input id="r2" type="radio" name="radio" /><label for="r2">ヂ</label>
+      <input id="r3" type="radio" name="radio" /><label for="r3">ヲ</label>
+    </fieldset>      
+  </body>
+</html>
